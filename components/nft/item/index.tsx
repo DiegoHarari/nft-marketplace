@@ -3,6 +3,9 @@
 import { FunctionComponent } from "react";
 import { NftMeta } from "../../../types/nft";
 
+/* eslint-disable @next/next/no-img-element */
+
+
 type NftItemProps = {
   item: NftMeta;
 }
