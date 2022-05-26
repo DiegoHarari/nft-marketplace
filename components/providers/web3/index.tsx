@@ -13,11 +13,11 @@ const Web3Provider: FunctionComponent<MyProps> = ({ children }) => {
     
     useEffect(() => { 
         const provider = new ethers.providers.Web3Provider(window.ethereum as any)
-        
+
         function initWeb3() { 
             setWeb3Api({
                 ethereum: window.ethereum,
-                provider: null,
+                provider,
                 contract: null,
                 isLoading:false,
             })
