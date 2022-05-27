@@ -8,11 +8,19 @@ import nfts from '../content/meta.json'
 import { NftMeta } from '../types/nft'
 
 const Home: NextPage = () => {
-  const { provider } = useWeb3()
+  const { provider, contract } = useWeb3()
+
+  const getNftInfo = async () => { 
+    console.log(await contract!.name())
+    console.log(await contract!.symbol())
+  }
   
+  if (contract) { 
+    getNftInfo()
+  }
+
   const getAcccounts = async () => { 
     const accounts = await provider!.listAccounts()
-    console.log(accounts)
   }
 
   if (provider) { 
